@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile2.Pages.ListePokke">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Ici notre liste de Pokemon !!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+
+            <ListView
+            CachingStrategy="RecycleElement"
+            ItemsSource="{Binding PokemonList}"
+            RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="8">
+                                <Label
+                                FontAttributes="Bold"
+                                FontSize="Subtitle"
+                                Text="{Binding nom}" />
+                                <Label
+                                FontAttributes="None"
+                                FontSize="Body"
+                                Text="{Binding element}" />
+                                <Label
+                                FontAttributes="None"
+                                FontSize="Body"
+                                Text="{Binding pv}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+            <!--<ListView
+                 CachingStrategy="RecycleElement"
+                 ItemsSource="{Binding PokemonList}"
+                 RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label
+                                    Text="{Binding Poke}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
