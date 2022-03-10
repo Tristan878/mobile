@@ -9,8 +9,11 @@ namespace mobile2.Models
 {
     public class Poke : ContentView
     {
-        public string nom { get; set; }
-        public string element { get; set; }
-        public int pv { get; set; }
+        public int Id { get; set; }
+        public string Nom { get; set; }
+        public float height { get; set; }
+        public float Weight { get; set; }
+        public string Image { get; set; }
+
     }
 }

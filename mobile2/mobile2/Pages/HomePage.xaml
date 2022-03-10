@@ -6,7 +6,8 @@
         <StackLayout>
             <Label Text="Bienvenu dans l'application PokkeApli !! N'hésiter pas à nous retrouver sur nos différent réseaux sociaux et sur notre site internet !"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"/>
             <Image Source="pokeball.png" />
         </StackLayout>
 
