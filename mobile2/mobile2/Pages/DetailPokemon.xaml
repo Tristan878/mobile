@@ -1,15 +1,68 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobile2.Pages.DetailPokemon">
-  <ContentView.Content>
-        <StackLayout  HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" >
-          <Label Text="Détail du Pokémon !" FontSize="20" TextColor="Black" />
-            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-                
-                
+  <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="Détail du Pokémon !" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" />
+            <Label HorizontalTextAlignment="Center" FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Nom}" TextColor="Black"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Image Source="{Binding Pictures}" WidthRequest="100" HeightRequest="100" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Pokémon Numéro :" FontAttributes="Bold" TextColor="Black"/>
+                            <Span Text="{Binding Id}" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Taille : " FontAttributes="Bold" TextColor="Black"/>
+                            <Span Text="{Binding height}" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Poids : " FontAttributes="Bold" TextColor="Black"/>
+                            <Span Text="{Binding Weight}" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="HP : " FontAttributes="Bold" TextColor="Black"/>
+                            <Span Text="{Binding Hp}" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </StackLayout>
-          
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+
+            <StackLayout Orientation="Vertical">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Talent : " FontAttributes="Bold" TextColor="Black"/>
+                            <Span Text="{Binding Capacity}" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -38,7 +38,9 @@ namespace mobile2.ViewModels
                 pokemon.Nom = pokeApi.Name;
                 pokemon.height = pokeApi.Height;
                 pokemon.Weight = pokeApi.Weight;
-                pokemon.Image = pokeApi.Sprites.FrontDefault;
+                pokemon.Pictures = pokeApi.Sprites.FrontDefault;
+                pokemon.Hp = pokeApi.Stats[0].BaseStat;
+                pokemon.Capacity = pokeApi.Abilities[0].Ability.Name;
 
                 PokemonList.Add(pokemon);
             }

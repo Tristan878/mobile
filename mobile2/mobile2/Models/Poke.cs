@@ -15,7 +15,9 @@ namespace mobile2.Models
         public string Nom { get; set; }
         public float height { get; set; }
         public float Weight { get; set; }
-        public string Image { get; set; }
+        public string Pictures { get; set; } 
+        public int Hp { get; set; }
+        public string Capacity { get; set; }
 
     }
 }

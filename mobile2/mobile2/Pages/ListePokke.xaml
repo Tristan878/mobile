@@ -11,7 +11,9 @@
 
 
             <CollectionView
-                ItemsSource="{Binding PokemonList}">
+                ItemsSource="{Binding PokemonList}"
+                SelectionMode="Single"
+                SelectionChanged="OnCollectionViewSelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         
@@ -36,7 +38,7 @@
                            
 
                             <Image 
-                                Source="{Binding Image}" WidthRequest="100" HeightRequest="100" />
+                                Source="{Binding Pictures}" WidthRequest="100" HeightRequest="100" />
                         </StackLayout>
                         
                     </DataTemplate>
