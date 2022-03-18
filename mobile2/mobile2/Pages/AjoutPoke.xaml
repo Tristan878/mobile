@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile2.Pages.AjoutPoke">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="newUser" Placeholder="Nom"/>
+            <Button x:Name="newButton" Text="Ajouté" Clicked="OnNewButtonClicked"/>
+            <Button x:Name="getButton" Text="Liste" Clicked="OnGetButtonClicked"/>
+            <Label x:Name="statusMessage"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

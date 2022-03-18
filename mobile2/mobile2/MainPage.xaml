@@ -11,7 +11,7 @@
             <pages:ListePokke/>
         </Tab>
         <Tab Title="3">
-            <!-- <pages:HomePage/> -->
+            <pages:AjoutPoke/>
         </Tab>
     </TabBar>
 
