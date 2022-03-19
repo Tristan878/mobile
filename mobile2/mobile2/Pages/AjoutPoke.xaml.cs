@@ -20,20 +20,20 @@ namespace mobile2.Pages
         private async void OnNewButtonClicked(object sender, EventArgs e)
         {
             statusMessage.Text = "";
-            await App.UserViewModel.AddNewUserAsync(newUser.Text);
-            statusMessage.Text = App.UserViewModel.StatusMessage;
+            await App.PokeBddViewModel.AddNewPokeAsync(newPoke.Text);
+            statusMessage.Text = App.PokeBddViewModel.StatusMessage;
         }
 
         private async void OnGetButtonClicked(object sender, EventArgs e)
         {
             statusMessage.Text = "";
-            List<User> users = await App.UserViewModel.GetUsersAsync();
+            List<PokeBdd> pokemons = await App.PokeBddViewModel.GetPokesAsync();
 
-            foreach (var user in users)
+            foreach (var pokemon in pokemons)
             {
-                Console.WriteLine($"{user.Id} - {user.Nom}");
+                Console.WriteLine($"{pokemon.Id} - {pokemon.Nom}");
 
-                statusMessage.Text = App.UserViewModel.StatusMessage;
+                statusMessage.Text = App.PokeBddViewModel.StatusMessage;
             }
         }
     }

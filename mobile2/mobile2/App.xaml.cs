@@ -10,12 +10,12 @@ namespace mobile2
     public partial class App : Application
     {
         private string dbPath = Path.Combine(FileSystem.AppDataDirectory, "pokebase.db3");
-        public static UserViewModel UserViewModel { get; private set; }
+        public static PokeBddViewModel PokeBddViewModel { get; private set; }
         public App()
         {
             InitializeComponent();
 
-            UserViewModel = new UserViewModel(dbPath);
+            PokeBddViewModel = new PokeBddViewModel(dbPath);
 
             MainPage = new MainPage();
         }

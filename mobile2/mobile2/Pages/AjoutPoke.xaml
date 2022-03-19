@@ -4,7 +4,7 @@
              x:Class="mobile2.Pages.AjoutPoke">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="newUser" Placeholder="Nom"/>
+            <Entry x:Name="newPoke" Placeholder="Nom"/>
             <Button x:Name="newButton" Text="Ajouté" Clicked="OnNewButtonClicked"/>
             <Button x:Name="getButton" Text="Liste" Clicked="OnGetButtonClicked"/>
             <Label x:Name="statusMessage"/>

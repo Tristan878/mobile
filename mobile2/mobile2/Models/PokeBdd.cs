@@ -6,7 +6,7 @@ using SQLite;
 namespace mobile2.Models
 {
     [Table("")]
-    public class User
+    public class PokeBdd
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

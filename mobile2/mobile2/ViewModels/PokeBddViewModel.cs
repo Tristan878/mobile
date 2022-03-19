@@ -7,23 +7,23 @@ using SQLite;
 
 namespace mobile2.ViewModels
 {
-    public class UserViewModel
+    public class PokeBddViewModel
     {
         private SQLiteAsyncConnection connection;
         public string StatusMessage { get; set; }
-       public UserViewModel (string dbPath)
+       public PokeBddViewModel (string dbPath)
         {
             connection = new SQLiteAsyncConnection(dbPath);
-            connection.CreateTableAsync<User>();
+            connection.CreateTableAsync<PokeBdd>();
         }
 
-        public async Task AddNewUserAsync(string Nom)
+        public async Task AddNewPokeAsync(string Nom)
         {
             int result = 0;
 
             try
             {
-                result = await connection.InsertAsync( new User { Nom = Nom });
+                result = await connection.InsertAsync( new PokeBdd { Nom = Nom });
                 StatusMessage = $"{result} pokemon ajouté : { Nom}";
             }
             catch (Exception ex)
@@ -32,18 +32,18 @@ namespace mobile2.ViewModels
             }
         }
 
-        public async Task<List<User>> GetUsersAsync()
+        public async Task<List<PokeBdd>> GetPokesAsync()
         {
             try
             {
-                return await connection.Table<User>().ToListAsync();
+                return await connection.Table<PokeBdd>().ToListAsync();
             }
             catch (Exception ex)
             {
                 StatusMessage = $"Impossible d'afficher les pokemons\n Erreur : {ex.Message} ";
             }
 
-            return new List<User>();
+            return new List<PokeBdd>();
         }
     }
 }
