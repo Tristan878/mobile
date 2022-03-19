@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mobile2.Pages.ListePokke">
+             x:Class="mobile2.Pages.ListePokke"
+             Title="Pokédex">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Ici notre liste de Pokemon !!"
+            <Label Text=""
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" TextColor="Black"/>
 
@@ -16,31 +18,47 @@
                 SelectionChanged="OnCollectionViewSelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        
-                            <StackLayout Orientation="Vertical">
-                            <Label>
-                            <Label.FormattedText>
-                                <FormattedString>
-                                        <Span Text="Pokédex : " FontAttributes="Bold" TextColor="Black"/>
-                                        <Span Text="{Binding Id}" TextColor="Black"/>
-                                </FormattedString>
-                            </Label.FormattedText>
-                            </Label>
+                        <Grid Padding="10">
+                        <Frame IsClippedToBounds="True" 
+                               HasShadow="True"
+                               Grid.Row="0" 
+                               Grid.Column="0"
+                               Padding="10"
+                               BorderColor="LightGray">
 
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Nom : " FontAttributes="Bold" TextColor="Black"/>
-                                        <Span Text="{Binding Nom}" TextColor="Black"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                           
+                                <StackLayout Orientation="Vertical">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span   Text="N°" 
+                                                    FontAttributes="Bold"
+                                                    FontSize="Medium"
+                                                    TextColor="Black"/>
 
-                            <Image 
-                                Source="{Binding Pictures}" WidthRequest="100" HeightRequest="100" />
-                        </StackLayout>
-                        
+                                                <Span 
+                                              Text="{Binding Id}" 
+                                              TextColor="Black"
+                                                    FontSize="Medium"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                                                <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Image 
+                                Source="{Binding Pictures}" 
+                                WidthRequest="150" 
+                                HeightRequest="150" />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

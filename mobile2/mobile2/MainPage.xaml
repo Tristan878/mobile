@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:mobile2.Pages"
-       x:Class="mobile2.MainPage">
+       x:Class="mobile2.HomePage">
     <!--Pages can be added as references or inline-->
     <TabBar>
-        <Tab Title="1">
+        <Tab Title="Menu" Icon="menu.png">
             <pages:HomePage/>
         </Tab>
-        <Tab Title="2">
-            <pages:ListePokke/>
+        <Tab Title="Liste" Icon="liste.png">
+            <pages:ListePokke />
         </Tab>
-        <Tab Title="3">
+        <Tab Title="Ajout" Icon="ajout.png">
             <pages:AjoutPoke/>
         </Tab>
     </TabBar>

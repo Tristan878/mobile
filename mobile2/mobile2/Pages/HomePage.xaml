@@ -1,15 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mobile2.Pages.HomePage">
+             x:Class="mobile2.Pages.HomePage"
+             Title="Menu Principal">
+   
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Bienvenu dans l'application PokkeApli !! N'hésiter pas à nous retrouver sur nos différent réseaux sociaux et sur notre site internet !"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                   TextColor="Black"/>
-            <Image Source="pokeball.png" />
-        </StackLayout>
 
+        <FlexLayout Direction="Column" 
+                    AlignItems="Center"
+                    JustifyContent="SpaceAround">
+            
+            <Image Source="logo.png" 
+                   HeightRequest="100"/>
+
+            <Label Text="Bienvenue sur PokeAppli !"
+                   TextColor="Black"
+                   FontSize="Large"/>
+
+            <Label  FontSize="Body"
+                    Text="Cette application sert à visualiser le pokédex"
+                    TextColor="Black"/>
+
+            <Label FontSize="Body"
+                   Text="Mais surtout de créer vos propres Pokémon"
+                   TextColor="Black"/>
+
+            <Label FontSize="Body"
+                   Text="Alors soyez créatif ! PIKA PIKA !"
+                   TextColor="Black"/>
+
+
+
+            <Image Source="Pikachu.png"
+                   HeightRequest="100"/>
+
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

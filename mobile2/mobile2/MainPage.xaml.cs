@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace mobile2
 {
-    public partial class MainPage : Shell
+    public partial class HomePage : Shell
     {
-        public MainPage()
+        public HomePage()
         {
             InitializeComponent();
         }
