@@ -10,6 +10,9 @@
         <Tab Title="Liste" Icon="liste.png">
             <pages:ListePokke />
         </Tab>
+        <Tab Title="Création" Icon="pokeball.png">
+            <pages:CreationPoke />
+        </Tab>
         <Tab Title="Ajout" Icon="ajout.png">
             <pages:AjoutPoke/>
         </Tab>

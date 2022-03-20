@@ -3,150 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobile2.Pages.ListePokke"
              Title="Pokédex">
-    
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Votre liste de pokemon ajouté !" FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Button x:Name="getButton" Text="Afficher ! " Clicked="OnGetButtonClicked"/>
-            <Label x:Name="statusMessage"/>
-
-            <CollectionView x:Name="collectionView">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                                        <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Taille : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text="{Binding Height}" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text=" cm" TextColor="Silver" FontSize="Small"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Poid : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text="{Binding Weight}" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text=" kg" TextColor="Silver" FontSize="Small"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Vie : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text="{Binding Hp}" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text=" hp" TextColor="Silver" FontSize="Small"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Type : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
-                                        <Span Text="{Binding Types}" TextColor="Silver" FontSize="Small"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        
-            
-            <Label Text=""
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-
-
-
-            <CollectionView
+        <CollectionView
                 ItemsSource="{Binding PokemonList}"
                 SelectionMode="Single"
                 SelectionChanged="OnCollectionViewSelectionChanged">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
                         <Frame IsClippedToBounds="True" 
                                HasShadow="True"
                                Grid.Row="0" 
                                Grid.Column="0"
                                Padding="10"
+                               CornerRadius="30"
                                BorderColor="LightGray">
 
-                                <StackLayout Orientation="Vertical">
-                                    <Label>
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span   Text="N°" 
+                            <StackLayout Orientation="Vertical">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span   Text="N°" 
                                                     FontAttributes="Bold"
                                                     FontSize="Medium"
                                                     TextColor="Black"/>
 
-                                                <Span 
+                                            <Span 
                                               Text="{Binding Id}" 
                                               TextColor="Black"
                                                     FontSize="Medium"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-                                    <Label>
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                                                <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                                            <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-                                    <Image 
+                                <Image 
                                 Source="{Binding Pictures}" 
                                 WidthRequest="150" 
                                 HeightRequest="150" />
-                                </StackLayout>
-                            </Frame>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-
-
-            <!--<ListView
-                 CachingStrategy="RecycleElement"
-                 ItemsSource="{Binding PokemonList}"
-                 RowHeight="70">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label
-                                    Text="{Binding Poke}" />
                             </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-        </StackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>

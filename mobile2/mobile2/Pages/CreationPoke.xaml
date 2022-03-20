@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile2.Pages.CreationPoke"
+             Title="Vos Pokémons">
+  <ContentPage.Content>
+
+        <StackLayout>
+            <Label x:Name="statusMessage"/>
+
+            <CollectionView x:Name="collectionView"
+                            SelectionMode="Single"
+                            SelectionChanged="OnCollectionViewSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Frame IsClippedToBounds="True" 
+                               HasShadow="True"
+                               Grid.Row="0" 
+                               Grid.Column="0"
+                               Padding="10"
+                               CornerRadius="30"
+                               BorderColor="LightGray">
+                                <StackLayout>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                                                <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Image Source="{Binding Image}" 
+                                           HeightRequest="150"
+                                            WidthRequest="150"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

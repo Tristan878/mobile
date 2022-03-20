@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mobile2.Pages.DetailPokemon"
-             Title="Détails du Pokémon">
-
-
-    <ContentPage.Content>
-        <StackLayout Margin="10" HorizontalOptions="CenterAndExpand" >
+             x:Class="mobile2.Pages.DetailCreationPoke">
+  <ContentPage.Content>
+     <StackLayout Margin="10" HorizontalOptions="CenterAndExpand" >
 
             <Label HorizontalTextAlignment="Center" 
                    FontSize="Large">
@@ -19,7 +16,7 @@
                 </Label.FormattedText>
             </Label>
 
-            <Image Source="{Binding Pictures}" 
+            <Image Source="{Binding Image}" 
                    WidthRequest="200" 
                    HeightRequest="200"
                    HorizontalOptions="Center"/>
@@ -76,5 +73,5 @@
                 </Label>
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+  </ContentPage.Content>
 </ContentPage>

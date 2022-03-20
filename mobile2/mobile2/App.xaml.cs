@@ -18,7 +18,7 @@ namespace mobile2
             PokeBddViewModel = new PokeBddViewModel(dbPath);
 
             MainPage = new HomePage();
-            MainPage.SetValue(property: HomePage.BackgroundColorProperty, Color.LightGray);
+            MainPage.SetValue(property: HomePage.BackgroundColorProperty, Color.Silver);
             MainPage.SetValue(property: HomePage.TitleColorProperty, Color.Black);
         }
 
