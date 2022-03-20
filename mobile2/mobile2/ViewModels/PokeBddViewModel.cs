@@ -41,10 +41,5 @@ namespace mobile2.ViewModels
         {
             return connection.InsertAsync(PokeBdd);
         }
-
-
-
-
-
     }
 }
