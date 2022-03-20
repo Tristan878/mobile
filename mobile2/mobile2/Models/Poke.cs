@@ -10,6 +10,7 @@ namespace mobile2.Models
 {
     public class Poke : ContentView
     {
+        /*Classe permettant d'afficher un pokemon de l'API*/
         [PrimaryKey, AutoIncrement]
         public new int Id { get; set; }
         public string Nom { get; set; }
