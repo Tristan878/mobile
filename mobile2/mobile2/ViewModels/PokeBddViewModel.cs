@@ -17,21 +17,24 @@ namespace mobile2.ViewModels
             connection.CreateTableAsync<PokeBdd>();
         }
 
-        public async Task AddNewPokeAsync(string Nom)
+        
+
+        /* public async Task AddNewPokeAsync(string Nom, float Height, float Weight, int Hp, string Types)
         {
             int result = 0;
 
             try
             {
-                result = await connection.InsertAsync( new PokeBdd { Nom = Nom });
+                result = await connection.InsertAsync(new PokeBdd { Nom = Nom, Height = Height, Weight = Weight, Hp = Hp, Types = Types });
                 StatusMessage = $"{result} pokemon ajouté : { Nom}";
             }
             catch (Exception ex)
             {
                 StatusMessage = $"Impossible d'ajouter le pokemon : { Nom}.\n Erreur : {ex.Message} ";
             }
-        }
+        } */ 
 
+   
         public async Task<List<PokeBdd>> GetPokesAsync()
         {
             try
@@ -45,5 +48,16 @@ namespace mobile2.ViewModels
 
             return new List<PokeBdd>();
         }
+
+
+        public Task<int> SavePokeAsync(PokeBdd PokeBdd)
+        {
+            return connection.InsertAsync(PokeBdd);
+        }
+
+
+
+
+
     }
 }

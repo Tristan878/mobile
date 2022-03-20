@@ -6,6 +6,73 @@
     
     <ContentPage.Content>
         <StackLayout>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Votre liste de pokemon ajouté !" FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Button x:Name="getButton" Text="Afficher ! " Clicked="OnGetButtonClicked"/>
+            <Label x:Name="statusMessage"/>
+
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                                        <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Taille : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text="{Binding Height}" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text=" cm" TextColor="Silver" FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Poid : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text="{Binding Weight}" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text=" kg" TextColor="Silver" FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Vie : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text="{Binding Hp}" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text=" hp" TextColor="Silver" FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Type : " FontAttributes="Bold" TextColor="Silver" FontSize="Small"/>
+                                        <Span Text="{Binding Types}" TextColor="Silver" FontSize="Small"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        
+            
             <Label Text=""
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" TextColor="Black"/>

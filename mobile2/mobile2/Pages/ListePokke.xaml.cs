@@ -34,5 +34,20 @@ namespace mobile2.Pages
 
             await Navigation.PushAsync(new DetailPokemon(current));
         }
+
+        private async void OnGetButtonClicked(object sender, EventArgs e)
+        {
+            statusMessage.Text = "";
+            List<PokeBdd> pokemons = await App.PokeBddViewModel.GetPokesAsync();
+
+            foreach (var pokemon in pokemons)
+            {
+                Console.WriteLine($"{pokemon.Id} - {pokemon.Nom}");
+
+                collectionView.ItemsSource = await App.PokeBddViewModel.GetPokesAsync();
+
+                statusMessage.Text = App.PokeBddViewModel.StatusMessage;
+            }
+        }
     }
 }

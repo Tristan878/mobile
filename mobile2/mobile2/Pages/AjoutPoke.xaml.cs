@@ -17,11 +17,29 @@ namespace mobile2.Pages
         {
             InitializeComponent();
         }
-        private async void OnNewButtonClicked(object sender, EventArgs e)
+        /* private async void OnNewButtonClicked(object sender, EventArgs e)
         {
             statusMessage.Text = "";
             await App.PokeBddViewModel.AddNewPokeAsync(newPoke.Text);
             statusMessage.Text = App.PokeBddViewModel.StatusMessage;
+        } */
+
+        async void OnNewButtonClicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(newNom.Text) && !string.IsNullOrWhiteSpace(newTaille.Text))
+            {
+                await App.PokeBddViewModel.SavePokeAsync(new PokeBdd
+                {
+                    Nom = newNom.Text,
+                    Height = float.Parse(newTaille.Text),
+                    Weight = float.Parse(newPoid.Text),
+                    Hp = int.Parse(newHp.Text),
+                    Types = newType.Text,
+                });
+
+               
+                collectionView.ItemsSource = await App.PokeBddViewModel.GetPokesAsync();
+            }
         }
 
         private async void OnGetButtonClicked(object sender, EventArgs e)
@@ -32,6 +50,8 @@ namespace mobile2.Pages
             foreach (var pokemon in pokemons)
             {
                 Console.WriteLine($"{pokemon.Id} - {pokemon.Nom}");
+
+                collectionView.ItemsSource = await App.PokeBddViewModel.GetPokesAsync();
 
                 statusMessage.Text = App.PokeBddViewModel.StatusMessage;
             }
