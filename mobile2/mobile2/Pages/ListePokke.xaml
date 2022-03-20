@@ -7,32 +7,31 @@
     <ContentPage.Content>
         <CollectionView
                 ItemsSource="{Binding PokemonList}"
-                SelectionMode="Single"
-                SelectionChanged="OnCollectionViewSelectionChanged">
+                SelectionChanged="OnCollectionViewSelectionChanged"
+                SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
-                        <Frame IsClippedToBounds="True" 
-                               HasShadow="True"
-                               Grid.Row="0" 
-                               Grid.Column="0"
-                               Padding="10"
+                        <Frame BorderColor="LightGray"
                                CornerRadius="30"
-                               BorderColor="LightGray">
+                               Grid.Column="0"
+                               Grid.Row="0" 
+                               HasShadow="True"
+                               IsClippedToBounds="True" 
+                               Padding="10">
 
                             <StackLayout Orientation="Vertical">
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span   Text="N°" 
-                                                    FontAttributes="Bold"
+                                            <Span   FontAttributes="Bold"
                                                     FontSize="Medium"
+                                                    Text="N°"
                                                     TextColor="Black"/>
 
-                                            <Span 
-                                              Text="{Binding Id}" 
-                                              TextColor="Black"
-                                                    FontSize="Medium"/>
+                                            <Span FontSize="Medium" 
+                                                  Text="{Binding Id}" 
+                                                  TextColor="Black"/>       
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
@@ -40,16 +39,21 @@
                                 <Label>
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                                            <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
+                                            <Span FontAttributes="Bold"
+                                                  FontSize="Medium"
+                                                  Text="Nom : "
+                                                  TextColor="Black"/>
+
+                                            <Span FontSize="Medium"
+                                                  Text="{Binding Name}" 
+                                                  TextColor="Black"/>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Image 
-                                Source="{Binding Pictures}" 
-                                WidthRequest="150" 
-                                HeightRequest="150" />
+                                <Image  HeightRequest="150"
+                                        Source="{Binding Pictures}" 
+                                        WidthRequest="150"/>
                             </StackLayout>
                         </Frame>
                     </Grid>

@@ -12,7 +12,7 @@ namespace mobile2.Models
     {
         [PrimaryKey, AutoIncrement]
         public new int Id { get; set; }
-        public string Nom { get; set; }
+        public string Name { get; set; }
         public new float Height { get; set; }
         public float Weight { get; set; }
         public string Pictures { get; set; } 

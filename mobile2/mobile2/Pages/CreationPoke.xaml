@@ -26,11 +26,11 @@
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                                                <Span Text="{Binding Nom}" TextColor="Black" FontSize="Medium"/>
+                                                <Span Text="{Binding Name}" TextColor="Black" FontSize="Medium"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Image Source="{Binding Image}" 
+                                    <Image Source="{Binding Picture}" 
                                            HeightRequest="150"
                                             WidthRequest="150"/>
                                 </StackLayout>

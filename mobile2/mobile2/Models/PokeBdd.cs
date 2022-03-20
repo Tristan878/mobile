@@ -11,8 +11,8 @@ namespace mobile2.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [MaxLength(50), Unique]
-        public string Nom { get; set; }
-        public string Image { get; set; }
+        public string Name { get; set; }
+        public string Picture { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public int Hp { get; set; }

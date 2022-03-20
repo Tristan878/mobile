@@ -6,16 +6,16 @@
    
     <ContentPage.Content>
 
-        <FlexLayout Direction="Column" 
-                    AlignItems="Center"
+        <FlexLayout AlignItems="Center"
+                    Direction="Column" 
                     JustifyContent="SpaceAround">
-            
-            <Image Source="logo.png" 
-                   HeightRequest="100"/>
 
-            <Label Text="Bienvenue sur PokeAppli !"
-                   TextColor="Black"
-                   FontSize="Large"/>
+            <Image  HeightRequest="100"
+                    Source="logo.png"/>
+
+            <Label  FontSize="Large" 
+                    Text="Bienvenue sur PokeAppli !"
+                    TextColor="Black"/>
 
             <Label  FontSize="Body"
                     Text="Cette application sert à visualiser le pokédex"
@@ -29,11 +29,8 @@
                    Text="Alors soyez créatif ! PIKA PIKA !"
                    TextColor="Black"/>
 
-
-
-            <Image Source="Pikachu.png"
-                   HeightRequest="100"/>
-
+            <Image HeightRequest="100" 
+                   Source="Pikachu.png"/>
         </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

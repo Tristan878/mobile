@@ -4,18 +4,21 @@
        x:Class="mobile2.HomePage">
     <!--Pages can be added as references or inline-->
     <TabBar>
-        <Tab Title="Menu" Icon="menu.png">
+        <Tab Icon="menu.png"
+             Title="Menu">
             <pages:HomePage/>
         </Tab>
-        <Tab Title="Liste" Icon="liste.png">
+        <Tab Icon="liste.png"
+             Title="Liste" >
             <pages:ListePokke />
         </Tab>
-        <Tab Title="Création" Icon="pokeball.png">
+        <Tab Icon="pokeball.png"
+             Title="Création">
             <pages:CreationPoke />
         </Tab>
-        <Tab Title="Ajout" Icon="ajout.png">
+        <Tab Icon="ajout.png"
+             Title="Ajout">
             <pages:AjoutPoke/>
         </Tab>
     </TabBar>
-
 </Shell>

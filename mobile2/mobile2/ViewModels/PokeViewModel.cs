@@ -36,7 +36,7 @@ namespace mobile2.ViewModels
 
                 Poke pokemon = new Poke();
                 pokemon.Id = pokeApi.Id;
-                pokemon.Nom = pokeApi.Name[0].ToString().ToUpper() + pokeApi.Name.Substring(1);
+                pokemon.Name = pokeApi.Name[0].ToString().ToUpper() + pokeApi.Name.Substring(1);
                 pokemon.Height = pokeApi.Height;
                 pokemon.Weight = pokeApi.Weight;
                 pokemon.Pictures = pokeApi.Sprites.FrontDefault;

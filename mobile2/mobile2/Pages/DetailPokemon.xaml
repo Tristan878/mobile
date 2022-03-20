@@ -6,75 +6,108 @@
 
 
     <ContentPage.Content>
-        <StackLayout Margin="10" HorizontalOptions="CenterAndExpand" >
+        <StackLayout HorizontalOptions="CenterAndExpand" 
+                     Margin="10">
 
-            <Label HorizontalTextAlignment="Center" 
-                   FontSize="Large">
+            <Label FontSize="Large" 
+                   HorizontalTextAlignment="Center">
+                
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="{Binding Nom}" 
-                              TextColor="Black"
-                              FontSize="Large"/>
+                        <Span FontSize="Large" 
+                              Text="{Binding Nom}" 
+                              TextColor="Black"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
-            <Image Source="{Binding Pictures}" 
-                   WidthRequest="200" 
-                   HeightRequest="200"
-                   HorizontalOptions="Center"/>
-
+            <Image HeightRequest="200"
+                   HorizontalOptions="Center"
+                   Source="{Binding Pictures}" 
+                   WidthRequest="200"/>
 
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Pokémon Numéro : " FontAttributes="Bold" TextColor="Black" FontSize="Medium" />
-                        <Span Text="{Binding Id}" TextColor="Black" FontSize="Medium"/>
+                        <Span  FontAttributes="Bold" TextColor="Black" 
+                               FontSize="Medium" 
+                               Text="Pokémon Numéro : "/>
+                        <Span  FontSize="Medium" 
+                               Text="{Binding Id}" 
+                               TextColor="Black" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
-            <StackLayout Orientation="Horizontal" >
-                <Label Padding="20">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Taille : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                            <Span Text="{Binding Height}" TextColor="Black" FontSize="Medium"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Padding="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span   FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Text="Taille : "  
+                                        TextColor="Black" />
+                            
+                                <Span   FontSize="Medium"
+                                        Text="{Binding Height}" 
+                                        TextColor="Black" />
+                             </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
-                <Label Padding="20">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Poids : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                            <Span Text="{Binding Weight}" TextColor="Black" FontSize="Medium"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
+                    <Label Padding="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span  FontAttributes="Bold"
+                                       FontSize="Medium"
+                                       Text="Poids : "
+                                       TextColor="Black"/>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Padding="20">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="HP : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                            <Span Text="{Binding Hp}" TextColor="Black" FontSize="Medium"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                                <Span FontSize="Medium" 
+                                      Text="{Binding Weight}"
+                                      TextColor="Black"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
 
-                <Label Padding="20">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Type : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                            <Span Text="{Binding Type1}" TextColor="Black" FontSize="Medium"/>
-                            <Span Text=' '/>
-                            <Span Text="{Binding Type2}" TextColor="Black" FontSize="Medium"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Padding="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span   FontAttributes="Bold" 
+                                        FontSize="Medium" 
+                                        Text="HP : " 
+                                        TextColor="Black"/>
+
+                                <Span   FontSize="Medium"
+                                        Text="{Binding Hp}" 
+                                        TextColor="Black" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Padding="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span   FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Text="Type : "  
+                                        TextColor="Black"/>
+
+                                <Span   FontSize="Medium" 
+                                        Text="{Binding Type1}" 
+                                        TextColor="Black"/>
+
+                                <Span Text=' '/>
+                                
+                                <Span   FontSize="Medium" 
+                                        Text="{Binding Type2}" 
+                                        TextColor="Black"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
