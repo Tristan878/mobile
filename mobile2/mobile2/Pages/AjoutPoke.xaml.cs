@@ -15,6 +15,7 @@ namespace mobile2.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AjoutPoke : ContentPage
     {
+        /* tableau des différents types pouvant être selectioné par un utilisateurs*/ 
         readonly string[] types = { "Acier","Combat","Dragon",
                                     "Eau","Électrik","Fée","Feu",
                                     "Glace","Insecte","Normal",
@@ -23,23 +24,21 @@ namespace mobile2.Pages
     public AjoutPoke()
         {
             InitializeComponent();
+            /*Pour rajouter le tableau des différents types possible dans les choix du picker*/
             foreach (string type in types)
             {
                 NewType1.Items.Add(type);
                 NewType2.Items.Add(type);
             }
         }
-        /* private async void OnNewButtonClicked(object sender, EventArgs e)
-        {
-            statusMessage.Text = "";
-            await App.PokeBddViewModel.AddNewPokeAsync(newPoke.Text);
-            statusMessage.Text = App.PokeBddViewModel.StatusMessage;
-        } */
+        
 
+        /*methode permetant de créer un pokemon en bdd lorsque les champs sont bien remplis et que l'on clique sur un bouton ajouté*/
         async void OnNewButtonClicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(newNom.Text) && ImagePoke.Source != null && NewType1.SelectedIndex != -1)
             {
+                /*On créer un nouveau pokemon en récupérant les informations rentrés dans la page AjoutPoke.xaml rentré par l'utilisateur.*/
                 PokeBdd pokemon = new PokeBdd
                 {
                     Nom = newNom.Text,
@@ -51,11 +50,14 @@ namespace mobile2.Pages
                     Type2 = "",
                 };
 
+                /*Condistion pour savoir si un pokemon à un deuxième type (si oui il est récupéré).*/
                 if (NewType2.SelectedIndex != -1)
                     pokemon.Type2 = NewType2.SelectedItem.ToString();
                 
+                /* on sauvegarde notre pokemon dans notre bdd grace à la fonction SavePokeAsync*/
                 await App.PokeBddViewModel.SavePokeAsync(pokemon);
 
+                /*Les champs sont remis par défaut (du formulaire d'ajout).*/
                 newNom.Text = "";
                 ImagePoke.Source = null;
                 newTaille.Value = 1;
@@ -70,6 +72,7 @@ namespace mobile2.Pages
             }
         }
 
+        /*Permeet d'afficher l'entier choisie par l'utilisateur pour les 3 sliders du formulaire.*/
         public void ValeurSlider(object sender, EventArgs e)
         {
             if (sender == newTaille)
@@ -85,8 +88,10 @@ namespace mobile2.Pages
 
         async void AjoutImage(object sender, EventArgs e)
         {
+            /*Initialisation du nugget CrossMedia*/
             await CrossMedia.Current.Initialize();
 
+            /*On véréfie si le téléphone supporte l'ajout d'image*/
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
                 await DisplayAlert("Non supporté", "Votre telephone ne " +
@@ -94,15 +99,17 @@ namespace mobile2.Pages
                 return;
             }
 
+            /*Permet d'optimiser la taille et la qualité de la photo séléctionné*/
             var mediaOptions = new PickMediaOptions
             {
                 PhotoSize = PhotoSize.Full,
                 CompressionQuality = 40
-
-
             };
 
+            
             var imageSelectionee = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
+
+            /*Permet de changer le texte du bouton "Ajouter une image"*/
             if (imageSelectionee != null)
             {
                 ImagePoke.Source = ImageSource.FromFile(imageSelectionee.Path);

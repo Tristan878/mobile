@@ -21,6 +21,7 @@ namespace mobile2.Pages
 
         }
 
+        /*Methode permettant de d'afficher la page de details de pokemon de l'api lors d'un clic*/
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Poke current = (e.CurrentSelection.FirstOrDefault() as Poke);

@@ -12,6 +12,7 @@ namespace mobile2.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailCreationPoke : ContentPage
     {
+
         public DetailCreationPoke(PokeBdd current)
         {
             InitializeComponent();

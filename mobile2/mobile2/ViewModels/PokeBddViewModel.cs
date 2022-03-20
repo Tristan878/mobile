@@ -9,36 +9,23 @@ namespace mobile2.ViewModels
 {
     public class PokeBddViewModel
     {
-        private SQLiteAsyncConnection connection;
-        public string StatusMessage { get; set; }
+       private SQLiteAsyncConnection connection;
+       public string StatusMessage { get; set; }
+
        public PokeBddViewModel (string dbPath)
         {
             connection = new SQLiteAsyncConnection(dbPath);
+            /* création de la table stoquant nos pokemons*/
             connection.CreateTableAsync<PokeBdd>();
         }
 
-        
 
-        /* public async Task AddNewPokeAsync(string Nom, float Height, float Weight, int Hp, string Types)
-        {
-            int result = 0;
-
-            try
-            {
-                result = await connection.InsertAsync(new PokeBdd { Nom = Nom, Height = Height, Weight = Weight, Hp = Hp, Types = Types });
-                StatusMessage = $"{result} pokemon ajouté : { Nom}";
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = $"Impossible d'ajouter le pokemon : { Nom}.\n Erreur : {ex.Message} ";
-            }
-        } */ 
-
-   
+        /*Methode permettant de renvoyer les information des pokemons stocker en bdd afin de les afficher*/
         public async Task<List<PokeBdd>> GetPokesAsync()
         {
             try
             {
+                /*retourne le contenu de la table que nous avons créé au dessus afin de stocker nos pokemons*/
                 return await connection.Table<PokeBdd>().ToListAsync();
             }
             catch (Exception ex)
@@ -49,15 +36,10 @@ namespace mobile2.ViewModels
             return new List<PokeBdd>();
         }
 
-
+        /*Methode permettant de sauvegarder les champs complétés par l'utilisateurs pour céer un pokemon en bdd*/
         public Task<int> SavePokeAsync(PokeBdd PokeBdd)
         {
             return connection.InsertAsync(PokeBdd);
         }
-
-
-
-
-
     }
 }

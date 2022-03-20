@@ -8,6 +8,7 @@ namespace mobile2.Models
     [Table("")]
     public class PokeBdd
     {
+        /*Classe permettant de créer des pokemons en bdd afin de les stocker dans celle-ci lors d'un ajout pokemon*/
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [MaxLength(50), Unique]
