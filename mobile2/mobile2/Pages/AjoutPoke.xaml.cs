@@ -26,7 +26,7 @@ namespace mobile2.Pages
 
         async void OnNewButtonClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(newNom.Text) && !string.IsNullOrWhiteSpace(newTaille.Text))
+            if (!string.IsNullOrWhiteSpace(newNom.Text) && !string.IsNullOrWhiteSpace(newTaille.Text) && !string.IsNullOrWhiteSpace(newPoid.Text) && !string.IsNullOrWhiteSpace(newHp.Text) && !string.IsNullOrWhiteSpace(newType.Text))
             {
                 await App.PokeBddViewModel.SavePokeAsync(new PokeBdd
                 {
