@@ -26,6 +26,7 @@ namespace mobile2.ViewModels
             CallApi();
         }
 
+        /* Fonction permettant d'initilaiser l'api et de retourner les informations des 50 Pokemons de la liste */
         async void CallApi() {
             PokeApiClient ClientPokeApi = new PokeApiClient();
             PokeApiClient pokeApiClient = new PokeApiClient();

@@ -4,32 +4,68 @@
              x:Class="mobile2.Pages.AjoutPoke">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Margin="20">
+            <StackLayout Margin="20">
             
-            <Entry x:Name="newNom" Placeholder="Nom" Margin="0,0,0,10"/>
-            <Button x:Name="BoutonImage" Text="Ajouter une image" Clicked="AjoutImage" BorderWidth="10" Margin="0,0,0,10"/>
-                <Image x:Name="ImagePoke" WidthRequest="150"/>
+                <Entry x:Name="NewName" 
+                       Margin="0,0,0,10"
+                       Placeholder="Nom" />
+                <Button x:Name="ImageBoutton" 
+                        BorderWidth="10"
+                        Clicked="AjoutImage"
+                        Margin="0,0,0,10"
+                        Text="Ajouter une image"/>
 
+                <Image x:Name="ImagePoke" 
+                       WidthRequest="150"/>
+                
+                <Label x:Name="LabelHeight" 
+                       Text="Taille : 1 "/>
+                <Slider x:Name="NewHeight"
+                        Margin="0,0,0,10"
+                        Maximum="500"
+                        Minimum="1" 
+                        MaximumTrackColor="Silver" 
+                        MinimumTrackColor="Silver"
+                        ThumbColor="Black"
+                        ValueChanged="ValeurSlider"/>
 
-             
-                    <Label x:Name="LabelTaille" Text="Taille : 1 "/>
-                <Slider x:Name="newTaille" Maximum="500" Minimum="1" ThumbColor="Black" MaximumTrackColor="Silver" MinimumTrackColor="Silver"   ValueChanged="ValeurSlider"  Margin="0,0,0,10"/>
+                <Label  x:Name="LabelWeight" 
+                        Text="Poids : 1 "/>
+                <Slider x:Name="NewWeight" 
+                        Margin="0,0,0,10"
+                        Maximum="1000" 
+                        Minimum="1" 
+                        MaximumTrackColor="Silver" 
+                        MinimumTrackColor="Silver"
+                        ThumbColor="Black"
+                        ValueChanged="ValeurSlider"/>
 
-                <Label x:Name="LabelPoids" Text="Poids : 1 "/>
-                <Slider x:Name="newPoids" Maximum="1000" Minimum="1" ThumbColor="Black" MaximumTrackColor="Silver" MinimumTrackColor="Silver"  ValueChanged="ValeurSlider"  Margin="0,0,0,10" />
-
-                <Label x:Name="LabelHp" Text="Points de vie : 1 "/>
-                <Slider x:Name="newHp" Maximum="255" Minimum="1" ThumbColor="Black" MaximumTrackColor="Silver" MinimumTrackColor="Silver"  ValueChanged="ValeurSlider" Margin="0,0,0,10" />
+                <Label x:Name="LabelHp" 
+                       Text="Points de vie : 1 "/>
+                <Slider x:Name="NewHp"
+                        Margin="0,0,0,10"
+                        Maximum="255" 
+                        Minimum="1"  
+                        MaximumTrackColor="Silver" 
+                        MinimumTrackColor="Silver"
+                        ThumbColor="Black"
+                        ValueChanged="ValeurSlider"/>
 
                 <Grid Margin="0,0,0,10">
-                <Picker x:Name="NewType1" Title="Type 1 (Obligatoire) : " Grid.Column="0"/>
-                <Picker x:Name="NewType2" Title="Type 2 (Optionnel) : " Grid.Column="1"/>
+                    <Picker     x:Name="NewType1"
+                                Grid.Column="0"
+                                Title="Type 1 (Obligatoire) : "/>
+                    <Picker     x:Name="NewType2" 
+                                Grid.Column="1"
+                                Title="Type 2 (Optionnel) : "/>
                 </Grid>
 
-
-
-                <Button x:Name="newButton" Text="Ajouter" Clicked="OnNewButtonClicked" BorderWidth="10"/>
-                <Label x:Name="statusMessage"/>
+                <Button x:Name="NewButton" 
+                        BorderWidth="10"
+                        Clicked="OnNewButtonClicked"
+                        Text="Ajouter"/>
+                
+                <Label  x:Name="StatusMessage"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

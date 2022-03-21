@@ -16,8 +16,9 @@ namespace mobile2
             InitializeComponent();
 
             PokeBddViewModel = new PokeBddViewModel(dbPath);
-
             MainPage = new HomePage();
+
+            /*Permet de mettre la barre d'état en argenté et le texte de celle-ci en noir*/
             MainPage.SetValue(property: HomePage.BackgroundColorProperty, Color.Silver);
             MainPage.SetValue(property: HomePage.TitleColorProperty, Color.Black);
         }

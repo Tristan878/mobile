@@ -36,16 +36,16 @@ namespace mobile2.Pages
         /*methode permetant de créer un pokemon en bdd lorsque les champs sont bien remplis et que l'on clique sur un bouton ajouté*/
         async void OnNewButtonClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(newNom.Text) && ImagePoke.Source != null && NewType1.SelectedIndex != -1)
+            if (!string.IsNullOrWhiteSpace(NewName.Text) && ImagePoke.Source != null && NewType1.SelectedIndex != -1)
             {
                 /*On créer un nouveau pokemon en récupérant les informations rentrés dans la page AjoutPoke.xaml rentré par l'utilisateur.*/
                 PokeBdd pokemon = new PokeBdd
                 {
-                    Nom = newNom.Text,
-                    Image = ImagePoke.Source.ToString().Split(' ')[1],
-                    Height = (int)newTaille.Value,
-                    Weight = (int)newPoids.Value,
-                    Hp = (int)newHp.Value,
+                    Name = NewName.Text,
+                    Picture = ImagePoke.Source.ToString().Split(' ')[1],
+                    Height = (int)NewHeight.Value,
+                    Weight = (int)NewWeight.Value,
+                    Hp = (int)NewHp.Value,
                     Type1 = NewType1.SelectedItem.ToString(),
                     Type2 = "",
                 };
@@ -54,15 +54,15 @@ namespace mobile2.Pages
                 if (NewType2.SelectedIndex != -1)
                     pokemon.Type2 = NewType2.SelectedItem.ToString();
                 
-                /* on sauvegarde notre pokemon dans notre bdd grace à la fonction SavePokeAsync*/
+                /*Permet de sauvegarder notre pokemon dans notre bdd grace à la fonction SavePokeAsync*/
                 await App.PokeBddViewModel.SavePokeAsync(pokemon);
 
                 /*Les champs sont remis par défaut (du formulaire d'ajout).*/
-                newNom.Text = "";
+                NewName.Text = "";
                 ImagePoke.Source = null;
-                newTaille.Value = 1;
-                newPoids.Value = 1;
-                newHp.Value = 1;
+                NewHeight.Value = 1;
+                NewWeight.Value = 1;
+                NewHp.Value = 1;
                 NewType1.SelectedIndex = -1;
                 NewType2.SelectedItem = -1;
             } 
@@ -75,14 +75,14 @@ namespace mobile2.Pages
         /*Permeet d'afficher l'entier choisie par l'utilisateur pour les 3 sliders du formulaire.*/
         public void ValeurSlider(object sender, EventArgs e)
         {
-            if (sender == newTaille)
-                LabelTaille.Text = "Taille : " + ((int)newTaille.Value).ToString();
+            if (sender == NewHeight)
+                LabelHeight.Text = "Taille : " + ((int)NewHeight.Value).ToString();
 
-            if (sender == newPoids)
-                LabelPoids.Text = "Poids : " + ((int)newPoids.Value).ToString();
+            if (sender == NewWeight)
+                LabelWeight.Text = "Poids : " + ((int)NewWeight.Value).ToString();
 
-            if (sender == newHp)
-                LabelHp.Text = "Points de vie : " + ((int)newHp.Value).ToString();
+            if (sender == NewHp)
+                LabelHp.Text = "Points de vie : " + ((int)NewHp.Value).ToString();
         }
 
 
@@ -113,7 +113,7 @@ namespace mobile2.Pages
             if (imageSelectionee != null)
             {
                 ImagePoke.Source = ImageSource.FromFile(imageSelectionee.Path);
-                BoutonImage.Text = "Changer l'Image";
+                ImageBoutton.Text = "Changer l'Image";
             }
             
         }

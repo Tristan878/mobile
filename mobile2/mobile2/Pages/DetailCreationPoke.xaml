@@ -97,11 +97,11 @@
                                         Text="{Binding Type1}"
                                         TextColor="Black"/>
                                 
-                                <Span Text=' '/>
+                                <Span   Text=' '/>
 
-                            <Span   FontSize="Medium" 
-                                    Text="{Binding Type2}" 
-                                    TextColor="Black" />
+                                <Span   FontSize="Medium" 
+                                        Text="{Binding Type2}" 
+                                        TextColor="Black" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

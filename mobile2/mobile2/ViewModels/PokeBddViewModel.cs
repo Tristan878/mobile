@@ -15,17 +15,17 @@ namespace mobile2.ViewModels
        public PokeBddViewModel (string dbPath)
         {
             connection = new SQLiteAsyncConnection(dbPath);
-            /* création de la table stoquant nos pokemons*/
+            /* Création de la table stoquant nos pokemons*/
             connection.CreateTableAsync<PokeBdd>();
         }
 
 
-        /*Methode permettant de renvoyer les information des pokemons stocker en bdd afin de les afficher*/
+        /*Methode permettant de renvoyer les information des Pokemons stockés en bdd afin de les afficher*/
         public async Task<List<PokeBdd>> GetPokesAsync()
         {
             try
             {
-                /*retourne le contenu de la table que nous avons créé au dessus afin de stocker nos pokemons*/
+                /*Pemert de retourner le contenu de la table que nous avons créé au dessus afin de stocker nos pokemons*/
                 return await connection.Table<PokeBdd>().ToListAsync();
             }
             catch (Exception ex)

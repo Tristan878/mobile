@@ -8,37 +8,36 @@
         <StackLayout>
             <Label x:Name="statusMessage"/>
 
-            <CollectionView x:Name="collectionView"
+                <CollectionView x:Name="collectionView"
                             SelectionMode="Single"
                             SelectionChanged="OnCollectionViewSelectionChanged">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10">
-                            <Frame IsClippedToBounds="True" 
-                               HasShadow="True"
-                               Grid.Row="0" 
-                               Grid.Column="0"
-                               Padding="10"
-                               CornerRadius="30"
-                               BorderColor="LightGray">
-                                <StackLayout>
-                                    <Label>
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
-                                                <Span Text="{Binding Name}" TextColor="Black" FontSize="Medium"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Image Source="{Binding Picture}" 
-                                           HeightRequest="150"
-                                            WidthRequest="150"/>
-                                </StackLayout>
-                            </Frame>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Frame  BorderColor="Silver"
+                                        CornerRadius="30"
+                                        Grid.Row="0" Grid.Column="0"
+                                        HasShadow="True"
+                                        IsClippedToBounds="True" 
+                                        Padding="10">
+                                    <StackLayout>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Nom : " FontAttributes="Bold" TextColor="Black" FontSize="Medium"/>
+                                                    <Span Text="{Binding Name}" TextColor="Black" FontSize="Medium"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Image  HeightRequest="150"
+                                                Source="{Binding Picture}"
+                                                WidthRequest="150"/>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

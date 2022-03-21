@@ -34,7 +34,7 @@ namespace mobile2.Pages
             foreach (var pokemon in pokemons)
             {
                 /*Dans la console*/
-                Console.WriteLine($"{pokemon.Id} - {pokemon.Nom}");
+                Console.WriteLine($"{pokemon.Id} - {pokemon.Name}");
                 /*Sur l'application*/
                 collectionView.ItemsSource = await App.PokeBddViewModel.GetPokesAsync();
                 statusMessage.Text = App.PokeBddViewModel.StatusMessage;
