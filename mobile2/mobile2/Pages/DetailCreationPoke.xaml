@@ -11,7 +11,7 @@
               <Label.FormattedText>
                   <FormattedString>
                       <Span FontSize="Large" 
-                            Text="{Binding Nom}" 
+                            Text="{Binding Name}" 
                             TextColor="Black"/>
                   </FormattedString>
               </Label.FormattedText>
@@ -19,7 +19,7 @@
 
           <Image HeightRequest="200"
                  HorizontalOptions="Center"
-                 Source="{Binding Image}" 
+                 Source="{Binding Picture}" 
                  WidthRequest="200"/>
 
           <Label HorizontalOptions="Center">
